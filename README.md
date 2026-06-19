@@ -175,7 +175,7 @@ python scripts/clean_generated.py
 If you use this repository in your research, please cite the associated manuscript:
 
 ```bibtex
-@misc{ikeda2026quantuminformationdynamicsqed2,
+@article{Ikeda:2026nvc,
   title         = {Quantum Information Dynamics of QED$_2$ in Expanding de Sitter Universe},
   author        = {Ikeda, Kazuki and Oz, Yaron},
   year          = {2026},
