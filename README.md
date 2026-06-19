@@ -22,7 +22,7 @@
 This repository accompanies
 
 > K. Ikeda and Y. Oz,  
-> **“Quantum Information Dynamics of QED<sub>2</sub>  in Expanding de Sitter Universe,”**  
+> **“Quantum Information Dynamics of QED<sub>2</sub> in Expanding de Sitter Universe,”**  
 > arXiv: [2604.02777](https://arxiv.org/abs/2604.02777) [hep-th].
 
 The project studies QED<sub>2</sub> in an expanding de Sitter background as a controlled setting where gauge dynamics, spectral flow, real-time evolution, and quantum-information diagnostics can be analyzed together. In cosmic time, the hopping term redshifts while the electric term grows with the scale factor, driving the system through a moving narrow-gap region in the $(\tau,m)$ plane. The resulting dynamics are probed through exact diagonalization, matrix-product-state calculations, and finite-temperature irreversibility diagnostics.
@@ -34,7 +34,7 @@ This repository provides the figure-level reproducibility package for the manusc
 ## What is included
 
 - **Figure 1:** dynamical-transition diagnostics from exact diagonalization, including the gap landscape, loss of adiabaticity, excitation-energy density, and structure-factor response.
-- **Figure 2:** fixed-mass thermodynamic and continuum extrapolation data from matrix-product-state calculations.
+- **Figure 2:** thermodynamic and continuum extrapolation data from matrix-product-state calculations, together with a source-archive plotting workflow for the thermodynamic-limit panels.
 - **Figure 3:** finite-temperature irreversibility-front diagnostics, including relative entropy, temperature dependence, finite-size checks, and LOCC-accessible observables.
 - **Validation utilities:** scripts for regenerating the figures and recording numerical checks in `generated/reproduction_checks.json`.
 
@@ -54,10 +54,12 @@ This repository provides the figure-level reproducibility package for the manusc
     │   ├── plot_figure1.py
     │   ├── plot_figure2.py
     │   ├── plot_figure3.py
+    │   ├── plot_thermodynamic_limit.py
     │   └── file_utils.py
     ├── scripts/
     │   ├── reproduce_figure1.py
     │   ├── reproduce_figure2.py
+    │   ├── reproduce_figure2_thermodynamic_limit.py
     │   ├── reproduce_figure3.py
     │   ├── check_reproduction.py
     │   ├── clean_generated.py
@@ -135,6 +137,23 @@ generated/
 
 The check script verifies that the regenerated outputs exist and records the numerical diagnostics used to confirm the figure data.
 
+### Figure 2 source-archive workflow
+
+A separate entry point is included for regenerating the thermodynamic-limit Figure 2 panels directly from a source archive, an extracted run directory, or a summary `.npz` file with its matching `.json` metadata:
+
+```bash
+python scripts/reproduce_figure2_thermodynamic_limit.py /path/to/source_archive.zip
+```
+
+The default output names are:
+
+```text
+generated/figure2_thermodynamic_limit.pdf
+generated/figure2_thermodynamic_limit.png
+```
+
+The input summary should contain the arrays `a_lat`, `N`, `ell_phys`, `tau_vals`, `gap_curves`, `tau_star`, and `gap_star`. Optional arrays such as `tau_star_coarse`, `gap_star_coarse`, `dtau_local`, and `dtau_full` are used when present to set the error estimates.
+
 ---
 
 ## Figure map
@@ -143,6 +162,7 @@ The check script verifies that the regenerated outputs exist and records the num
 | --- | --- | --- | --- |
 | Figure 1 | `data/figure_1/transition_data.zip` | `scripts/reproduce_figure1.py` | `generated/figure1.pdf` |
 | Figure 2 | `data/figure_2/fixed_mass_gap_summary.npz` | `scripts/reproduce_figure2.py` | `generated/figure2.pdf`, `generated/figure2.png` |
+| Figure 2 thermodynamic-limit workflow | source archive, extracted run directory, or summary `.npz` | `scripts/reproduce_figure2_thermodynamic_limit.py` | `generated/figure2_thermodynamic_limit.pdf`, `generated/figure2_thermodynamic_limit.png` |
 | Figure 3 | `data/figure_3/` | `scripts/reproduce_figure3.py` | `generated/figure3.pdf`, `generated/figure3.png` |
 
 ---
@@ -191,7 +211,7 @@ If you use this repository in your research, please cite the associated manuscri
 
 ## Funding
 
-The work of KI was supported by the U.S. Department of Energy, Office of Science, under Contract No. DE-SC0026415 and in part by the NSF under Grant No. OSI-2328774, in particular, on the connection between quantum fundamentals and quantum systems. The work of YO was supported by the Israeli Science Foundation Excellence Center, the US-Israel Binational Science Foundation, and the Israel Ministry of Science.
+The work of KI was supported by the U.S. Department of Energy, Office of Science, under Contract No. DE-SC0026415 and in part by the NSF under Grant No. OSI-2328774 (KI), in particular, on the connection between quantum fundamentals and quantum systems. The work of YO was supported by the Israeli Science Foundation Excellence Center, the US-Israel Binational Science Foundation, and the Israel Ministry of Science.
 
 ---
 
