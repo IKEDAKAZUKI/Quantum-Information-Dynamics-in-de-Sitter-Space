@@ -191,7 +191,7 @@ If you use this repository in your research, please cite the associated manuscri
 
 ## Funding
 
-The work of KI was supported by the U.S. Department of Energy, Office of Science, under Contract No. DE-SC0026415 and in part by the NSF under Grant No. OSI-2328774 (KI), in particular, on the connection between quantum fundamentals and quantum systems. The work of YO was supported by the Israeli Science Foundation Excellence Center, the US-Israel Binational Science Foundation, and the Israel Ministry of Science.
+The work of KI was supported by the U.S. Department of Energy, Office of Science, under Contract No. DE-SC0026415 and in part by the NSF under Grant No. OSI-2328774, in particular, on the connection between quantum fundamentals and quantum systems. The work of YO was supported by the Israeli Science Foundation Excellence Center, the US-Israel Binational Science Foundation, and the Israel Ministry of Science.
 
 ---
 
