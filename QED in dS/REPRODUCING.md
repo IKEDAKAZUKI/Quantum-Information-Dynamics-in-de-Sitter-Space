@@ -30,6 +30,21 @@ python scripts/reproduce_figure2.py
 python scripts/reproduce_figure3.py
 ```
 
+## Thermodynamic-limit Figure 2 workflow
+
+A source archive, extracted run directory, or summary `.npz` file can be passed directly to the thermodynamic-limit plotting script:
+
+```bash
+python scripts/reproduce_figure2_thermodynamic_limit.py /path/to/source_archive.zip
+```
+
+The default outputs are:
+
+```text
+generated/figure2_thermodynamic_limit.pdf
+generated/figure2_thermodynamic_limit.png
+```
+
 ## Check generated files
 
 ```bash
