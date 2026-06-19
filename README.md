@@ -25,7 +25,7 @@ This repository accompanies
 > **“Quantum Information Dynamics of QED<sub>2</sub>  in Expanding de Sitter Universe,”**  
 > arXiv: [2604.02777](https://arxiv.org/abs/2604.02777) [hep-th].
 
-The project studies QED$_2$ in an expanding de Sitter background as a controlled setting where gauge dynamics, spectral flow, real-time evolution, and quantum-information diagnostics can be analyzed together. In cosmic time, the hopping term redshifts while the electric term grows with the scale factor, driving the system through a moving narrow-gap region in the $(\tau,m)$ plane. The resulting dynamics are probed through exact diagonalization, matrix-product-state calculations, and finite-temperature irreversibility diagnostics.
+The project studies QED<sub>2</sub> in an expanding de Sitter background as a controlled setting where gauge dynamics, spectral flow, real-time evolution, and quantum-information diagnostics can be analyzed together. In cosmic time, the hopping term redshifts while the electric term grows with the scale factor, driving the system through a moving narrow-gap region in the $(\tau,m)$ plane. The resulting dynamics are probed through exact diagonalization, matrix-product-state calculations, and finite-temperature irreversibility diagnostics.
 
 This repository provides the figure-level reproducibility package for the manuscript: numerical data products, plotting routines, reference figures, and validation scripts for Figures 1–3.
 
